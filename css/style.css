@@ -15,6 +15,7 @@
 
 body {
     background-color: #F5F5F5;
+    display:flex;
 }
 
 /* #4 # sweat #uppercase buttons and w3w locations */
@@ -30,17 +31,29 @@ button, strong {
 h1 {
     background-color: #3F51B5;
     color: white;
+    display:inherit;
+    height:80px;
+    width:auto;
+    margin:inherit;
+    font:inherit;
+    line-height:8;
+    
 }
 
 
 /* CHANNELS LIST */
 
-/* #4 #sweat #channels */
+/* #4 #sweat #channels
+Use absolute positioning to #left-align the channels area, filling the full screen height. The area takes up 40% of the whole browser window*/
+
 ul {
     /* #3 #channels #list modifies h2 to ul */
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+    display: inherit;
+    overflow:auto;
+    
 }
 
 li {
@@ -51,6 +64,7 @@ li {
     font-size: 16px;
     /* #4 #channel tiles are separated by #lines */
     border-bottom: 1px solid #F5F5F5;
+    overflow: auto;
 }
 
 /* #4 active #channel is #highlighted */
@@ -63,19 +77,31 @@ li img {
     /* #4 #middle vertical alignment of icons in the #channels list */
     vertical-align: middle;
 }
+#channels{
+    flex:4;
+    justify-content: flex-start;
+    overflow: scroll;
+    
+    
+}
 
 /* TAB BAR */
 
 /* #4 #sweat #tab-bar */
 #tab-bar {
+    justify-content: space-between;
     /* #3 #tab-bar #container should be white */
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 /* #4 add styles to #tab-bar #buttons */
 #tab-bar button {
+
     background-color: white;
     border: none;
     font-size: 13px;
@@ -97,7 +123,10 @@ li img {
     color: #3F51B5;
     border-bottom: 4px solid #3F51B5;
 }
-
+#chat{
+    flex:6;
+    justify-content: flex-start;
+}
 
 /* MESSAGES */
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
@@ -115,6 +144,11 @@ li img {
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    
 }
 
 .message h3 em {
@@ -130,12 +164,16 @@ li img {
 .message p {
     background-color: white;
     padding: 16px;
+    position: relative;
 }
 
 .message button {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    position:absolute;
+    bottom: 8px;
+    right:8px;
 }
 
 /* #4 left align own #messages using #margins */
